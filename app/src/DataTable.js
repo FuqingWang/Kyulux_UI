@@ -2,18 +2,17 @@ import { DataGrid } from '@material-ui/data-grid';
 
 export default function DataTable(props) {
 
-  const items = props.data;
+  // to-dos
+  console.log(props.data);
 
-  const colNames = items[]
+  // const colss = Object.keys(items[0]).map((val, index) => {
+  //   return {field: val, headerName: val, width: 70};
+  // });
 
-  const colss = items[0].map((val, index) => {
-    return {field: val, headerName: val, width: 70};
-  });
-
-  const rowss = items.map((item, index) => {
-    item.id = index;
-    return item;
-  });
+  // const rowss = items.map((item, index) => {
+  //   item.id = index;
+  //   return item;
+  // });
 
   const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
@@ -49,7 +48,7 @@ export default function DataTable(props) {
   ];
 
   return (
-    <div style={{ height: 400, width: '100%' }}>
+    <div style={{ height: 800, width: '100%' }}>
       <DataGrid rows={rows} columns={columns} pageSize={20} checkboxSelection />
     </div>
   );

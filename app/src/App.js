@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import './App.css';
 import DataTable from './DataTable';
 
-function App() {
+export default function App() {
   const [error, setError] = useState(null);
 
   const [isLoaded, setIsLoaded] = useState(false);
@@ -16,16 +16,19 @@ function App() {
       .then(res => res.json())
       .then(
         (result) => {
-          setData(result.results);
           setIsLoaded(true);
+          setData(result.results);
         },
         (error) => {
-          setError("Error getting data");
           setIsLoaded(false);
+          setError("Error getting data");
         }
       )
   }, [])
 
+  // console.log("loaded: " + isLoaded);
+  // console.log("error: " + error);
+  // console.log("data: " + data);
   if (error) {
     return <div>Error: {error}</div>;
   } else if (!isLoaded) {
@@ -43,5 +46,3 @@ function App() {
     );
   }
 }
-
-export default App;
