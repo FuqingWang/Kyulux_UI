@@ -1,4 +1,5 @@
 # Kyulux_UI
+A simple DataTable UI to support data visualization.
 
 ## Objective
 The objective of this project is to create a app that consumes a Restful API and display the response in a data table format.
@@ -17,6 +18,6 @@ The table currently doesn't consume nested objects, if one is found it displays 
 The project uses React as base framework(https://reactjs.org/), the table component is built with the help of material-ui(https://material-ui.com/).
 The project line up is straight forward, the Restful API call is first consumed in App.js, then the result is passed to DataTable.js to build out the table.
 
-## run instructions
+## Run instructions
 For install and run instructions, please go to /app folder.
 
