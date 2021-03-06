@@ -1,4 +1,3 @@
-import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
 import React, { useEffect, useState } from "react";
 
 import './App.css';
@@ -16,19 +15,16 @@ export default function App() {
       .then(res => res.json())
       .then(
         (result) => {
-          setIsLoaded(true);
           setData(result.results);
+          setIsLoaded(true);
         },
         (error) => {
-          setIsLoaded(false);
           setError("Error getting data");
+          setIsLoaded(false);
         }
       )
   }, [])
 
-  // console.log("loaded: " + isLoaded);
-  // console.log("error: " + error);
-  // console.log("data: " + data);
   if (error) {
     return <div>Error: {error}</div>;
   } else if (!isLoaded) {
